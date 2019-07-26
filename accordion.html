@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>手风琴效果</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+</head>
+<body>
+<div class="box">
+	<ul class="menu">
+		<li class="level1">
+			<a href="#">春天</a>
+			<ul class="level2">
+				<li>春意盎然</li>
+				<li>春意盎然</li>
+				<li>春意盎然</li>
+				<li>春意盎然</li>
+			</ul>
+		</li>
+		<li class="level1">
+			<a href="#">夏天</a>
+			<ul class="level2">
+				<li>夏日炎炎</li>
+				<li>夏日炎炎</li>
+				<li>夏日炎炎</li>
+				<li>夏日炎炎</li>
+			</ul>
+		</li>
+		<li class="level1">
+			<a href="#">秋天</a>
+			<ul class="level2">
+				<li>秋高气爽</li>
+				<li>秋高气爽</li>
+				<li>秋高气爽</li>
+				<li>秋高气爽</li>
+			</ul>
+		</li>
+
+	</ul>
+</div>
+
+<script>
+$(function() {
+	$('.level1>a').click(function() {
+		$(this).addClass('current') //给当前元素添加"current"样式
+			.next().show() //将其子元素显示
+		//父将它的父辈的同辈元素的内部的子元素 a移除"current"样式
+			.parent().siblings().children('a').removeClass('current')
+			.next().hide(); // 并隐藏后面元素
+	})
+})
+</script>
+</body>
+</html>
