@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery 学习代码</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+</head>
+<body>
+<div id="demo"></div>
+
+<div class="demo"></div>
+
+<div>shiyanlou1</div>
+<div>shiyanlou2</div>
+
+<a href="http://www.shiyanlou.com/">http://www.shiyanlou.com/</a>
+
+
+<div class="demo">
+	<a href="http://www.shiyanlou.com/">shiyanlou</a>
+	<div class="innerDemo">
+		<a href="http://www.shiyanlou.com/">SHIYANLOU</a>
+	</div>
+</div>
+
+<script>
+$(function() {
+	$('#demo').css({
+		width              : '100px',
+		height             : '100px',
+		'background-color' : 'red'
+	});
+
+	$('.demo').css({
+		width           : '100px',
+		height          : '100px',
+		backgroundColor : 'red'
+	});
+
+	$('div').css({
+		width           : '100px',
+		height          : '100px',
+		backgroundColor : 'red'
+	});
+
+	// 所有选择器，包括 html，head...
+	/*$('*').css({
+		width           : '100px',
+		height          : '100px',
+		backgroundColor : 'red'
+	});*/
+
+	// 找到所有匹配的选择器后返回
+	/*$('div,a').css({
+		fontSize : '30px'
+	});*/
+
+	// 找到demo的后代元素
+	$('.demo a').css({
+		fontSize : "30px"
+	});
+
+	// 找到demo的直接子元素
+	$('.demo>a').css({
+		color : 'green'
+	})
+})
+</script>
+</body>
+</html>
